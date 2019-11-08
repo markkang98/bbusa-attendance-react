@@ -11,7 +11,7 @@ class Home extends React.Component{
         this.state = {message: ''}
     }
     getTrial(){
-         fetch("https://ec2-54-162-54-1.compute-1.amazonaws.com:8443/trial?name=mark",{
+         fetch("https://ec2-54-162-54-1.compute-1.amazonaws.com:8443/trial?name=It ",{
             // fetch("https://localhost:8443/trial?name=mark",{
             method: 'GET',
             credentials: "include",
