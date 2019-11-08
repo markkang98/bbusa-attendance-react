@@ -9,8 +9,9 @@ class App extends React.Component{
         return(
             <Router>
                 <Route exact path= '/' component= {Home}/>
-                <Route path = '/login' component = {Login}/>
-                <Route path = '/signup' component = {Signup}/>
+                <Route exact path= '/bbusa-attendance-react' component= {Home}/>
+                <Route path = '/bbusa-attendance-react/login' component = {Login}/>
+                <Route path = '/bbusa-attendance-react/signup' component = {Signup}/>
             </Router>
         )
     }
