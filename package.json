@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://markkag98.github.io/bbusa-attendance-react",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --host dev.ourguider.com --port 3000"
+    "start": "webpack-dev-server --host dev.ourguider.com --port 3000",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
