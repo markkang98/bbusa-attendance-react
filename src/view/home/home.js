@@ -11,11 +11,14 @@ class Home extends React.Component{
         this.state = {message: ''}
     }
     getTrial(){
-         //fetch("https://ec2-54-162-54-1.compute-1.amazonaws.com:9443/trial?name=It ",{
-            fetch("https://localhost:9443/trial?name=mark",{
+        var headers = new Headers();
+
+        headers.append('Authorization', "ijackson@hotmail.com");
+         fetch("https://ec2-user@ec2-54-162-54-1.compute-1.amazonaws.com:9443/getClassList",{
             method: 'GET',
             credentials: "include",
-            mode: "cors"
+            mode: "cors",
+            headers: headers
         })
         .then(res => res.text()).then((response)=>{
             console.log(response)
