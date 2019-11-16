@@ -12,8 +12,7 @@ class Home extends React.Component{
     }
     getTrial(){
         var headers = new Headers();
-
-        headers.append('Authorization', "ijackson@hotmail.com");
+        headers.append('testing', "ijackson@hotmail.com");
          fetch("https://ec2-user@ec2-54-162-54-1.compute-1.amazonaws.com:9443/getClassList",{
             method: 'GET',
             credentials: "include",
