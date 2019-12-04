@@ -15,9 +15,11 @@ class Class extends React.Component{
              
         return(
             <div className = "class-wrapper" style = {styles.container}>
-            <h1>{this.props.title}</h1>
-            <h2>{"Age Range: " + this.props.startAge + "~" + this.props.olderAge}</h2>
-            <h2>{"Time : " + this.props.startTime + "~" + this.props.endTime}</h2>
+                <div className = "title-wrapper">
+                    <label className = "title">{this.props.title}</label>
+                </div>
+                <h2>{"Age Range: " + this.props.startAge + "~" + this.props.olderAge}</h2>
+                <h2>{"Time : " + this.props.startTime + "~" + this.props.endTime}</h2>
             <button>Check Roster</button>
         </div>
         )

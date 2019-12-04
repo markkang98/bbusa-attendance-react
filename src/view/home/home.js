@@ -7,10 +7,71 @@ import { properties } from 'components/properties.js';
 class Home extends React.Component{
     constructor(props){
         super(props)
-        this.state = {message: '', email: ''}
+        this.state = {status: '', email: '', loggedin: false, loading: true}
+        var endpoint = "/authentication/getCurrentUser";
+        fetch( properties.host + endpoint,{
+            method: 'GET',
+            credentials: "include",
+            mode: "cors"
+        }).then(res=>res.text()).then((response) => {
+            if(response.length !== 0){
+                this.setState({email: response})
+                this.checkInstructor()
+                this.checkParent()
+                this.checkStudent()
+                this.setState({loggedin: true});
+            }
+        }).then(()=>{
+            this.setState({loading: false})
+        })
     }
+    checkInstructor(){
+        console.log("works")
+        fetch(properties.host + 
+          "/checkInstructor?userid=" + this.state.email,{
+          method: 'GET',
+          credentials: "include",
+          mode: "cors"
+        }).then(res => res.json()).then(
+          (response)=>{
+            if(response.length != 0){
+                window.location.href = "/instructor";
+            }
+          })
+      }
+    
+      checkParent(){
+        fetch(properties.host + 
+          "/checkParent?userid=" + this.state.email,{
+          method: 'GET',
+          credentials: "include",
+          mode: "cors"
+        }).then(res => res.json()).then(
+          (response)=>{
+            if(response.length != 0){
+                window.location.href = "/instructor";
+            }
+          })
+      }
+    
+      checkStudent(){
+        fetch(properties.host + 
+          "/checkStudent?userid=" + this.state.email,{
+          method: 'GET',
+          credentials: "include",
+          mode: "cors"
+        }).then(res => res.json()).then(
+          (response)=>{
+            if(response.length != 0){
+                window.location.href = "/instructor";
+            }
+          })
+      }
     
     render(){
+        if (this.state.loggedin || this.state.loading) {
+            return <div />
+          }else{
         return(
             <div className = "homepage-wrapper">
                 <Header loginStatus = {false}/>
@@ -20,6 +81,7 @@ class Home extends React.Component{
             </div>
             
         )
+          }
     }
 }
 

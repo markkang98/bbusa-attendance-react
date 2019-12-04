@@ -8,11 +8,24 @@ class Instructor extends React.Component{
 
     constructor(props){
         super(props)
-        this.state = {classes: []}
+        this.state = {classes: [], currentUser: ""}
     }
     componentDidMount(){
+        var endpoint = "/authentication/getCurrentUser";
+        fetch( properties.host + endpoint,{
+            method: 'GET',
+            credentials: "include",
+            mode: "cors"
+        }).then(res=>res.text()).then((response) => {
+            if(response.length !== 0){
+                this.setState({currentUser: response})
+                this.getListOfClasses()
+            }
+        })
+    }
+    getListOfClasses(){
         fetch(properties.host + 
-            "/instructorClasses?instructor=notaprguy@att.net",{
+            "/instructorClasses?instructor=" + this.state.currentUser,{
             method: 'GET',
             credentials: "include",
             mode: "cors"
@@ -21,6 +34,7 @@ class Instructor extends React.Component{
             var row = 1;
             var uniqueKey = 1;
             var temp = [];
+            
             for(var i = 0; i < response.length; i ++){
                 var classJson = response[i]
                 var classTitle = classJson.description
@@ -46,13 +60,16 @@ class Instructor extends React.Component{
                 }
                 uniqueKey ++;
             }
-            var classObject = <button key = {uniqueKey} className = "new-button">Add New Class</button>
+            var classObject = <button key = {uniqueKey} className = "new-button" onClick = {this.newClass.bind(this)}>Add New Class</button>
             temp.push(classObject)
             this.setState({classes: temp})
         }
         )
     }
-
+    newClass(){
+        event.preventDefault();
+        window.location.href = '/createNewClass'
+    }
     render(){
         return(
             <div>

@@ -7,7 +7,7 @@ class Signup extends React.Component{
     render(){
         return(
             <div>
-                <Header></Header>
+                <Header loginStatus = {false}></Header>
                 <Signupbox></Signupbox>
             </div>
             
