@@ -1,11 +1,16 @@
 import React from 'react';
 import './signup.css'
-
+import Header from 'components/header/Header'
+import Signupbox from 'components/signupbox/Signupbox'
 
 class Signup extends React.Component{
     render(){
         return(
-            <h1>Sign Up</h1>
+            <div>
+                <Header></Header>
+                <Signupbox></Signupbox>
+            </div>
+            
         )
     }
 }

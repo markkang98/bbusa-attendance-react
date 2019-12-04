@@ -1,0 +1,9 @@
+.class-wrapper{
+    border: 1px solid black;
+    width: 350px;
+    height: 250px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 9px;
+    font-family: 'Poppins', sans-serif;
+}

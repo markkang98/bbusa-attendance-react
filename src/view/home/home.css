@@ -1,0 +1,16 @@
+html, body{
+    margin: 0;
+    height: 100%;
+}
+#main{
+    height: 100%;
+}
+
+.homepage-wrapper{
+    position: relative;
+    display: flex;
+}
+.homepage-elements{
+    width: 100%;
+    margin-top: 70px;
+}

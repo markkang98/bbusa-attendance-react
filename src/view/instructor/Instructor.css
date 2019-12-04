@@ -1,0 +1,20 @@
+
+.class-elements{
+    width: 99%;
+    position: absolute;
+    margin-top: 70px;
+    
+    display: grid;
+    overflow-x: hidden;
+    overflow: visible;
+    justify-items: center;
+    justify-content: space-evenly;
+}
+
+.new-button{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    width: 350px;
+    height: 200px;
+    margin: 9px;
+}
