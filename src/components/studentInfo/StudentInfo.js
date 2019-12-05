@@ -5,7 +5,7 @@ import './StudentInfo.css'
 class StudentInfo extends React.Component{
     constructor(props){
         super(props)
-        this.state = {SID: "", attendanceType: ""}
+        this.state = {SID: "", attendanceType: "attended"}
     }
 
     submitAttendance(){
@@ -24,7 +24,8 @@ class StudentInfo extends React.Component{
     }
     viewAttendance(){
         var SID = this.state.SID
-// view attendance 
+        var CID = this.props.CID
+        window.location.href = "/attendance?CID=" + CID +"&SID=" + SID
     }
 
     componentDidMount(){

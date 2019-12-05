@@ -25,8 +25,10 @@ class Logout extends React.Component{
                 <Header loginStatus = {true} profileLink = "/"></Header>
                 <div className = "logout-elements">
                     <h1>Are you sure you want to log out?</h1>
-                    <button onClick = {this.logOut.bind(this)}>Yes</button>
-                    <button onClick = {this.goBack.bind(this)}>No</button>
+                    <div className = "buttons">
+                        <button onClick = {this.logOut.bind(this)}>Yes</button>
+                        <button onClick = {this.goBack.bind(this)}>No</button>
+                    </div>
                 </div>
             </div>
         )

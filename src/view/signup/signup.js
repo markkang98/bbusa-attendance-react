@@ -20,12 +20,15 @@ class Signup extends React.Component{
         return(
             <div>
                 <Header loginStatus = {false}></Header>
+                <div className = "signup-choice">
+                    <label>Sign up as  </label>
+                    <select onChange = {this.selectType.bind(this)}>
+                        <option>Instructor</option>
+                        <option>Parent</option>
+                        <option>Student</option>
+                    </select>
+                </div>
                 {formSignup}
-                <select onChange = {this.selectType.bind(this)}>
-                    <option>Instructor</option>
-                    <option>Parent</option>
-                    <option>Student</option>
-                </select>
             </div>
             
         )

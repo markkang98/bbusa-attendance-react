@@ -1,7 +1,6 @@
 import React from 'react'
 import './StudentClass.css'
 import { properties } from 'components/properties.js';
-import StudentList from 'components/studentList/StudentList'
 
 class StudentClass extends React.Component{
     constructor(props){
@@ -10,7 +9,8 @@ class StudentClass extends React.Component{
     }
     viewAttendance(){
         var SID = this.props.SID
-        //view attendance
+        var CID = this.props.classEntity.cid
+        window.location.href = "/attendance?CID=" + CID +"&SID=" + SID
     }
     render(){
         const styles = {

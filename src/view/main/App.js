@@ -12,6 +12,7 @@ import StudentProfile from '../studentProfile/studentProfile'
 import StudentList from '../studentList/studentList'
 import Register from '../register/register'
 import Request from '../request/request'
+import Attendance from '../attendance/attendance'
 class App extends React.Component{
     render(){
         return(
@@ -28,6 +29,7 @@ class App extends React.Component{
                 <Route path = '/register' component = {Register}/>
                 <Route path = '/requestList' component = {Request}/>
                 <Route path = '/studentList' component = {StudentList}/>
+                <Route path = '/attendance' component = {Attendance}/>
             </Router>
         )
     }

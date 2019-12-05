@@ -32,10 +32,12 @@
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.9.0",
+    "react-yearly-calendar": "^1.2.1"
   },
   "dependencies": {
     "gh-pages": "^2.1.1",
-    "react-alert": "^6.0.0"
+    "react-alert": "^6.0.0",
+    "react-yearly-calendar": "^1.2.1"
   }
 }

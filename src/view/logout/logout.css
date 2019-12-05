@@ -1,4 +1,10 @@
 .logout-elements{
     position: absolute;
     margin-top: 70px;
+    margin-left: 25%;
+    width: 50%;
+}
+
+.buttons{
+    text-align: center;
 }
