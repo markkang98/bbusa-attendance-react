@@ -8,7 +8,7 @@ import Student from '../student/Student'
 import Logout from '../logout/logout'
 import NewClass from '../newClass/newClass'
 import InstructorProfile from "../instructorProfile/instructorProfile"
-
+import Register from '../register/register'
 
 class App extends React.Component{
     render(){
@@ -22,6 +22,7 @@ class App extends React.Component{
                 <Route path = '/logout' component = {Logout}/>
                 <Route path = '/createNewClass' component = {NewClass}/>
                 <Route path = '/instructorProfile' component = {InstructorProfile}/>
+                <Route path = '/register' component = {Register}/>
             </Router>
         )
     }

@@ -20,6 +20,8 @@ class Instructor extends React.Component{
             if(response.length !== 0){
                 this.setState({currentUser: response})
                 this.getListOfClasses()
+            }else{
+                window.location.href = "/";
             }
         })
     }
