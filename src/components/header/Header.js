@@ -15,7 +15,7 @@ class Header extends React.Component{
         }else{
             page =  <div className="header-right">
                         <Link className = 'signup' to='/logout'> Log Out </Link>
-                        <Link className = 'signup' to='/instructorProfile'> Profile </Link>
+                        <Link className = 'signup' to= {this.props.profileLink}> Profile </Link>
                     </div>
         }
         return(

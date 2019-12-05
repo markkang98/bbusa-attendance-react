@@ -1,0 +1,38 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+.signup-form{
+    display: inline-block;
+    width: 300px;
+    margin-top: 100px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    padding: 10px;
+    background-color: #F7F9FB;
+    border-radius: 10px;
+}
+
+.signup-form-wrapper{
+    text-align: center;
+    position: relative;
+}
+
+.signup-label, .signup-input{
+    float: left;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+}
+
+.signup-label{
+    padding-top: 20px;
+}
+
+.half{
+    display: flex;
+    width: 100%;
+}
+.half-input{
+    padding: 5px;
+    width: 50%;
+}

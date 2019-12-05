@@ -31,9 +31,9 @@ class Loginbox extends React.Component{
       this.checkInstructor()
       
     }else if(this.state.type == "Parent"){
-      this.checkParent
+      this.checkParent()
     }else if(this.state.type == "Student"){
-      this.checkStudent
+      this.checkStudent()
     }
   }
 
@@ -76,12 +76,12 @@ class Loginbox extends React.Component{
       method: 'GET',
       credentials: "include",
       mode: "cors"
-    }).then(res => res.json).then(
+    }).then(res => res.json()).then(
       (response)=>{
         if(response.length == 0){
           this.setState({status: "Your permissions are incorrect. Try again"})
         }else{
-          window.location.href = "/instructor";
+          window.location.href = "/student";
         }
       })
   }

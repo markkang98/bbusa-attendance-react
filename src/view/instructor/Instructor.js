@@ -42,6 +42,8 @@ class Instructor extends React.Component{
                 var classOlderAge = classJson.target_older_age
                 var startTime = classJson.start_date
                 var endTime = classJson.end_date
+                var CID = classJson.cid
+                console.log(CID)
                 var classObject = <Class key = {uniqueKey}
                                          title = {classTitle}
                                          startAge = {classStartAge}
@@ -50,6 +52,7 @@ class Instructor extends React.Component{
                                          endTime = {endTime}
                                          row = {row}
                                          column = {column}
+                                         id = {CID}
                                 />
                 temp.push(classObject)
                 if(column == 3){
@@ -73,7 +76,7 @@ class Instructor extends React.Component{
     render(){
         return(
             <div>
-                <Header loginStatus = {true}/>
+                <Header profileLink = {"/instructorProfile"} loginStatus = {true}/>
                 <div className = "class-elements">
                     {this.state.classes}
                 </div>

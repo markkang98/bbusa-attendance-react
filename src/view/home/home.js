@@ -63,7 +63,7 @@ class Home extends React.Component{
         }).then(res => res.json()).then(
           (response)=>{
             if(response.length != 0){
-                window.location.href = "/instructor";
+                window.location.href = "/student";
             }
           })
       }
