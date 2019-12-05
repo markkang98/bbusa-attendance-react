@@ -66,7 +66,9 @@ class Instructor extends React.Component{
                 uniqueKey ++;
             }
             var classObject = <button key = {uniqueKey} className = "new-button" onClick = {this.newClass.bind(this)}>Add New Class</button>
+            var requests = <button key = {uniqueKey + 1} className = "new-button" onClick = {this.requests.bind(this)}>View Requests</button>
             temp.push(classObject)
+            temp.push(requests)
             this.setState({classes: temp})
         }
         )
@@ -74,6 +76,11 @@ class Instructor extends React.Component{
     newClass(){
         event.preventDefault();
         window.location.href = '/createNewClass'
+    }
+
+    requests(){
+        event.preventDefault();
+        window.location.href = '/requestList'
     }
     render(){
         return(

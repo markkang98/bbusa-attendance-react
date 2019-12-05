@@ -22,7 +22,7 @@ class Logout extends React.Component{
     render(){
         return(
             <div>
-                <Header loginStatus = {true}></Header>
+                <Header loginStatus = {true} profileLink = "/"></Header>
                 <div className = "logout-elements">
                     <h1>Are you sure you want to log out?</h1>
                     <button onClick = {this.logOut.bind(this)}>Yes</button>

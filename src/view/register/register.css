@@ -1,4 +1,11 @@
 .class-list{
+    width: 99%;
     position: absolute;
     margin-top: 70px;
+    
+    display: grid;
+    overflow-x: hidden;
+    overflow: visible;
+    justify-items: center;
+    justify-content: space-evenly;
 }

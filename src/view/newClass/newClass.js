@@ -7,7 +7,7 @@ class NewClass extends React.Component{
     render(){
         return(
             <div>
-                <Header loginStatus = {true}></Header>
+                <Header loginStatus = {true} profileLink= {"/instructorProfile"}></Header>
                 <NewClassBox></NewClassBox>
             </div>
             

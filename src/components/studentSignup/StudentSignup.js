@@ -30,8 +30,8 @@ class StudentSignup extends React.Component{
           "/addNewStudent?studentEmail=" + this.state.email + 
           "&belt=" + this.state.belt + 
           "&age=" + this.state.age + 
-          "&emergencyContactName=" + this.state.onEmergencyContactName + 
-          "&emergencyContactNumber=" + this.state.onEmergencyContactNumber + 
+          "&emergencyContactName=" + this.state.emergencyContactName + 
+          "&emergencyContactNumber=" + this.state.emergencyContactNumber + 
           "&gender=" + this.state.gender, {
           method: 'PUT',
           credentials: "include",

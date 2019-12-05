@@ -31,7 +31,7 @@ class Student extends React.Component{
     }
     getListOfClasses(){
         fetch(properties.host + 
-            "/student/getClassList?student_email=" + "ijackson@hotmail.com",{
+            "/student/getClassList?student_email=" + this.state.currentUser,{
             method: 'GET',
             credentials: "include",
             mode: "cors"
@@ -42,16 +42,16 @@ class Student extends React.Component{
             var temp = [];
             console.log(response)
             for(var i = 0; i < response.length; i ++){
-                var attendsEntity = response[i].attendsEntity
+                var SID = response[i].sid
                 var classEntity = response[i].classesEntity
                 var instructorEntity = response[i].instructorEntities[0]
                 var instructorFirstName = response[i].instructor_firstName
                 var instructorLastName = response[i].instructor_lastName
                 var classObject = <StudentClass key = {uniqueKey}
-                                        attendance = {attendsEntity}
                                         classEntity = {classEntity}
                                         instructor = {instructorFirstName + " " + instructorLastName}
                                         instructorEntity = {instructorEntity}
+                                        SID = {SID}
                                          row = {row}
                                          column = {column}
                                 />
@@ -64,7 +64,7 @@ class Student extends React.Component{
                 }
                 uniqueKey ++;
             }
-            var classObject = <button key = {uniqueKey} onClick = {this.signUpClass.bind(this)}className = "new-button" >Sign Up</button>
+            var classObject = <button key = {uniqueKey} onClick = {this.signUpClass.bind(this)}className = "new-button" >Register!</button>
             temp.push(classObject)
             this.setState({classes: temp})
         }

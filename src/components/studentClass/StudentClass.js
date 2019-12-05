@@ -8,6 +8,10 @@ class StudentClass extends React.Component{
         super(props)
         this.state = {studentlist: []}
     }
+    viewAttendance(){
+        var SID = this.props.SID
+        //view attendance
+    }
     render(){
         const styles = {
             container: {
@@ -24,7 +28,7 @@ class StudentClass extends React.Component{
                 <h2 className = "description">{"Time : " + this.props.classEntity.start_date + "~" + this.props.classEntity.end_date}</h2>
                 <h2 className = "description">{"Instructor: " + this.props.instructor}</h2>
                 <h2 className = "description">{"Instructor Email: " + this.props.instructorEntity.instructorEmail}</h2>
-            <button>Check Roster</button>
+            <button onClick= {this.viewAttendance.bind(this)}>Check Attendance</button>
             {this.state.studentlist}
         </div>
         )
