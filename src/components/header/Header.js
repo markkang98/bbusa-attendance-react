@@ -22,11 +22,11 @@ class Header extends React.Component{
             <div className= 'header'>
                 <div className = 'header-left'>
                     <Link className = 'name' to = '/'>
-                    {/* <img className="logo" src = {require('src/images/logo.png')}/> */}
+                     <img className="logo" src = {require('src/images/logo.png')}/>
                         Black Belt USA</Link>
                 </div>
                 {page}
-                
+
             </div>
         )
     }
