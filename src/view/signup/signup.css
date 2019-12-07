@@ -1,6 +1,8 @@
 .signup-choice{
     position: absolute;
     margin-top: 150px;
-    left: 45%;
+    left: 41%;
+    bottom: 75.5%;
     z-index: 1000000;
+    color: black;
 }
