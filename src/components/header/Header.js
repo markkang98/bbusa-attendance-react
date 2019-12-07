@@ -9,7 +9,7 @@ class Header extends React.Component{
         var page;
         if(this.props.loginStatus === false){
             page =  <div className="header-right">
-                            <Link className = 'signup' to='/signup'>New? Sign Up</Link>
+                            <Link className = 'signup' to='/signup'>Sign Up</Link>
                             <Link className = 'header-nav' to= '/login'>Log In</Link>
                         </div>
         }else{

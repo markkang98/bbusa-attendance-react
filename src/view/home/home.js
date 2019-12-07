@@ -27,7 +27,7 @@ class Home extends React.Component{
     }
     checkInstructor(){
         console.log("works")
-        fetch(properties.host + 
+        fetch(properties.host +
           "/checkInstructor?userid=" + this.state.email,{
           method: 'GET',
           credentials: "include",
@@ -39,9 +39,9 @@ class Home extends React.Component{
             }
           })
       }
-    
+
       checkParent(){
-        fetch(properties.host + 
+        fetch(properties.host +
           "/checkParent?userid=" + this.state.email,{
           method: 'GET',
           credentials: "include",
@@ -53,9 +53,9 @@ class Home extends React.Component{
             }
           })
       }
-    
+
       checkStudent(){
-        fetch(properties.host + 
+        fetch(properties.host +
           "/checkStudent?userid=" + this.state.email,{
           method: 'GET',
           credentials: "include",
@@ -67,7 +67,7 @@ class Home extends React.Component{
             }
           })
       }
-    
+
     render(){
         if (this.state.loggedin || this.state.loading) {
             return <div />
@@ -77,9 +77,10 @@ class Home extends React.Component{
                 <Header loginStatus = {false}/>
                 <div className = "homepage-elements">
                     <h1>Welcome!</h1>
+                     <img className="karate" src = {require('src/images/karate.png')}/>
                 </div>
             </div>
-            
+
         )
           }
     }
