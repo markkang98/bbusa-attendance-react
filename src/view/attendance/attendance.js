@@ -8,13 +8,15 @@ import {Calendar, CalendarControls} from 'react-yearly-calendar';
 class Attendance extends React.Component{
     constructor(props){
         super(props)
-        this.state = {currentYear: 2019, attendance_dates: null, attended: [], absent: [], excused: []}
+        this.state = {account: "", currentYear: 2019, attendance_dates: null, attended: [], absent: [], excused: []}
     }
 
     componentDidMount(){
         const values = queryString.parse(this.props.location.search)
         var CID = values.CID
-        var SID = values.SID
+        var SID = values.SID 
+        var account = values.link
+        this.setState({account: account})
         var endpoint = "/attendance/getAttendance?SID=" + SID + 
         "&CID=" + CID;
         fetch( properties.host + endpoint,{
@@ -69,7 +71,7 @@ class Attendance extends React.Component{
     render(){
         return(
             <div>
-            <Header profileLink = {'/'} loginStatus = {true} ></Header>
+            <Header profileLink = {this.state.account} loginStatus = {true} ></Header>
             <div className = "calender-wrapper">
             <select onChange = {this.attendChange.bind(this)}>
                 <option>Attended</option>

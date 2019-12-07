@@ -10,7 +10,7 @@ class StudentClass extends React.Component{
     viewAttendance(){
         var SID = this.props.SID
         var CID = this.props.classEntity.cid
-        window.location.href = "/attendance?CID=" + CID +"&SID=" + SID
+        window.location.href = "/attendance?CID=" + CID +"&SID=" + SID + "&link=/studentProfile"
     }
     render(){
         const styles = {

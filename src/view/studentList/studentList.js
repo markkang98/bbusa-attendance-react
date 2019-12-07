@@ -39,7 +39,7 @@ class StudentList extends React.Component{
     render(){
         return(
             <div>
-                <Header loginStatus = {true} profileLink = "/studentProfile"/>
+                <Header loginStatus = {true} profileLink = "/instructorProfile"/>
                 <div className = "student-list">
                     {this.state.studentList}
                 </div>

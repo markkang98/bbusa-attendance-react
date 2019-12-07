@@ -25,7 +25,7 @@ class StudentInfo extends React.Component{
     viewAttendance(){
         var SID = this.state.SID
         var CID = this.props.CID
-        window.location.href = "/attendance?CID=" + CID +"&SID=" + SID
+        window.location.href = "/attendance?CID=" + CID +"&SID=" + SID + "&link=/instructorProfile"
     }
 
     componentDidMount(){
