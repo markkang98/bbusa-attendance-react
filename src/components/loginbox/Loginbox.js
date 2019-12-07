@@ -10,8 +10,8 @@ class Loginbox extends React.Component{
   }
   logIn(){
     event.preventDefault();
-      fetch(properties.host + 
-        "/authentication/login?userid=" + this.state.email + 
+      fetch(properties.host +
+        "/authentication/login?userid=" + this.state.email +
         "&password=" + this.state.password,{
         method: 'POST',
         credentials: "include",
@@ -38,7 +38,7 @@ class Loginbox extends React.Component{
 
   checkInstructor(){
     console.log("works")
-    fetch(properties.host + 
+    fetch(properties.host +
       "/checkInstructor?userid=" + this.state.email,{
       method: 'GET',
       credentials: "include",
@@ -54,7 +54,7 @@ class Loginbox extends React.Component{
   }
 
   checkParent(){
-    fetch(properties.host + 
+    fetch(properties.host +
       "/checkParent?userid=" + this.state.email,{
       method: 'GET',
       credentials: "include",
@@ -70,7 +70,7 @@ class Loginbox extends React.Component{
   }
 
   checkStudent(){
-    fetch(properties.host + 
+    fetch(properties.host +
       "/checkStudent?userid=" + this.state.email,{
       method: 'GET',
       credentials: "include",
@@ -119,7 +119,7 @@ class Loginbox extends React.Component{
                 <button onClick = {this.logIn.bind(this)}>Submit</button>
               </form>
             </div>
-          </div>  
+          </div>
         )
     }
 }
