@@ -39,6 +39,7 @@
   "dependencies": {
     "gh-pages": "^2.1.1",
     "react-alert": "^6.0.0",
-    "react-yearly-calendar": "^1.2.1"
+    "react-yearly-calendar": "^1.2.1",
+    "tableau-api": "^2.2.3"
   }
 }

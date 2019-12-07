@@ -2,7 +2,7 @@ import React from 'react';
 import './home.css'
 import Header from 'components/header/Header'
 import { properties } from 'components/properties.js';
-
+import tableau from "tableau-api";
 
 class Home extends React.Component{
     constructor(props){
@@ -80,7 +80,6 @@ class Home extends React.Component{
                      <img className="karate" src = {require('src/images/karate.png')}/>
                 </div>
             </div>
-
         )
           }
     }

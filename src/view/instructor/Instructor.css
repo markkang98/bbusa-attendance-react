@@ -1,9 +1,8 @@
 
 .class-elements{
-    width: 99%;
     position: absolute;
     margin-top: 70px;
-    
+    width: 99%;
     display: grid;
     overflow-x: hidden;
     overflow: visible;
@@ -17,4 +16,10 @@
     width: 350px;
     height: 250px;
     margin: 9px;
+}
+
+.tableau-data{
+    position: absolute;
+    margin-top: 0px;
+    width: 100%;
 }

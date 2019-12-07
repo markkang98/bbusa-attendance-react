@@ -8,7 +8,7 @@ import {Calendar, CalendarControls} from 'react-yearly-calendar';
 class Attendance extends React.Component{
     constructor(props){
         super(props)
-        this.state = {currentYear: 2019, attendance_dates: null}
+        this.state = {currentYear: 2019, attendance_dates: null, attended: [], absent: [], excused: []}
     }
 
     componentDidMount(){
@@ -24,13 +24,23 @@ class Attendance extends React.Component{
         }).then(res=>res.json()).then((response) => {
             console.log(response)
             var i;
-            var dates = [];
+            var datesAttended = [];
+            var datesExcused = [];
+            var datesAbsent = [];
             for(i = 0; i < response.length; i ++){
             var date = response[i].attendDate;
-            dates.push(date);
+            var type = response[i].attendance;
+             
+            if(type === "attended"){
+                datesAttended.push(date)
+            }else if (type === "excused"){
+                datesExcused.push(date)
+            }else if( type === "absent"){
+                datesAbsent.push(date)
             }
-            var attended = {attended: dates}
-            this.setState({attendance_dates: attended})
+            }
+            var attended = {attended: datesAttended}
+            this.setState({attendance_dates: attended, attended: datesAttended, absent: datesAbsent, excused: datesExcused})
             })
         
     }
@@ -41,11 +51,31 @@ class Attendance extends React.Component{
     this.setState({currentYear: this.state.currentYear + 1})
     }
 
+    attendChange(event){
+        console.log(event.target.value)
+        var type = event.target.value
+        if(type === "Attended"){
+            var attended = {attended: this.state.attended}
+            this.setState({attendance_dates: attended})
+        }else if (type === "Excused"){
+            var excused = {excused: this.state.excused}
+            this.setState({attendance_dates: excused})
+        }else if( type === "Absent"){
+            var absent = {excused: this.state.absent}
+            this.setState({attendance_dates: absent})
+        }
+    }
+
     render(){
         return(
             <div>
             <Header profileLink = {'/'} loginStatus = {true} ></Header>
             <div className = "calender-wrapper">
+            <select onChange = {this.attendChange.bind(this)}>
+                <option>Attended</option>
+                <option>Excused</option>
+                <option>Absent</option>
+            </select>
             <CalendarControls 
                 year = {this.state.currentYear} 
                 onPrevYear = {this.prevYear.bind(this)} 

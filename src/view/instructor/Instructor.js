@@ -19,12 +19,44 @@ class Instructor extends React.Component{
         }).then(res=>res.text()).then((response) => {
             if(response.length !== 0){
                 this.setState({currentUser: response})
+                this.tableauInit()
                 this.getListOfClasses()
             }else{
                 window.location.href = "/";
             }
         })
     }
+    tableauInit() {
+        const vizUrl = 
+        "https://public.tableau.com/views/Student316/Dashboard1?:display_count=y&publish=yes&:origin=viz_share_link"      
+        const vizContainer = this.vizContainer;  
+        const options = {
+            hideTabs: true,
+            width: "100%",
+            height: "800px",
+            onFirstInteractive: () => {
+                const sheet = viz.getWorkbook().getActiveSheet().getWorksheets().get("Table");
+                const options = {
+                    ignoreAliases: false,
+                    ignoreSelection: false,
+                    includeAllColumns: false
+                };
+                sheet.getUnderlyingDataAsync(options).then((t) => {
+                    const tableauData = t.getData();
+                    let data = [];
+                    const pointCount = tableauData.length;
+                    for(let a = 0; a < pointCount; a++ ) {
+                        data = data.concat({
+                            x: tableauData[a][0].value,
+                            y: Math.round(tableauData[a][3].value,2)
+                        })
+                    };
+                })
+            }
+        };
+  
+        let viz = new window.tableau.Viz(this.vizContainer, vizUrl, options);
+      }
     getListOfClasses(){
         fetch(properties.host + 
             "/instructorClasses?instructor=" + this.state.currentUser,{
@@ -86,10 +118,9 @@ class Instructor extends React.Component{
         return(
             <div>
                 <Header profileLink = {"/instructorProfile"} loginStatus = {true}/>
-                <div className = "class-elements">
-                    {this.state.classes}
-                </div>
-                
+                    <div className = "class-elements">
+                        {this.state.classes}
+                    </div>
             </div>
         )
     }
