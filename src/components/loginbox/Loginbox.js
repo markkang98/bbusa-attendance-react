@@ -29,7 +29,6 @@ class Loginbox extends React.Component{
 
     if(this.state.type == "Instructor"){
       this.checkInstructor()
-      
     }else if(this.state.type == "Parent"){
       this.checkParent()
     }else if(this.state.type == "Student"){
