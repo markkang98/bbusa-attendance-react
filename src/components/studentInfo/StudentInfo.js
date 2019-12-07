@@ -11,7 +11,7 @@ class StudentInfo extends React.Component{
     submitAttendance(){
         console.log(this.state.SID)
         console.log(this.props.CID)
-        var endpoint = "/attendance/submitAttendance?SID=" + this.state.SID + 
+        var endpoint = "/submitAttendance?SID=" + this.state.SID + 
         "&CID=" + this.props.CID + 
         "&attendance_type=" + this.state.attendanceType;
         fetch( properties.host + endpoint,{
